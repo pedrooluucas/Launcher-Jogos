@@ -16,8 +16,10 @@ public class BibliotecaPanel extends TelaPanel {
 	public BibliotecaPanel(JPanel telas, JFrame janela) {
 		super(telas, janela);
 		this.jogos = new ArrayList<Jogo>();
-    		
+		
+    
 		carregarJogos();
+		exibirJogos();
 	}
 	
 	
@@ -35,13 +37,24 @@ public class BibliotecaPanel extends TelaPanel {
 	
 	private void exibirJogos() {
 		
-		for (Jogo jogo : jogos) {
-		String icone = jogos.get(0).getIcone();
+		int posicaoX = 50;
+		int posicaoY = 50;
+		final int POSICAO_MAX_X = 1250;
+		
+		 for (Jogo jogo : jogos) {
+		String icone = jogo.getIcone();
 		Imagem imagem = new Imagem(icone);
-		imagem.setBounds(1700, 0, 200, 30);
-		this.add(imagem);
+		imagem.setBounds(posicaoX, posicaoY, 256, 256);
+			
+		posicaoX += 30 + 256;
+		if (posicaoX > POSICAO_MAX_X) {
+			posicaoX = 50;
+			posicaoY += 30 + 256;
 		}
-	}
+		
+		this.add(imagem);
+		} 
+	} 
 
 
 	private String lerJsonJogos()  {
@@ -63,8 +76,4 @@ public class BibliotecaPanel extends TelaPanel {
 		
 		return conteudoArquivo.toString();
 	}
-	
-	public void executarBotao(ActionEvent e) {
-    	trocarTela("Tela Login");
-    }
 }

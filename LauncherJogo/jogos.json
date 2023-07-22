@@ -4,37 +4,103 @@
  	"nome" : "SA-MP",
  	"caminho" : "C::",
  	"icone" : "samp-logo.png",
- 	"fundo" : "gtasa-fundo.jpg"
+ 	"fundo" : "fundo.jpg"
  },
  {
  	"nome" : "MTA",
  	"caminho" : "C::",
- 	"icone" : "mta.logo.png",
- 	"fundo" : "mta-fundo.png"
+ 	"icone" : "mta-logo.png",
+ 	"fundo" : "fundo.jpg"
  },
  {
  	"nome" : "Stumbler Guys",
  	"caminho" : "C::",
  	"icone" : "stumbler-logo.png",
- 	"fundo" : "stumbler-fundo.png"
+ 	"fundo" : "fundo.jpg"
  },
  {
  	"nome" : "Discord",
  	"caminho" : "C::",
- 	"icone" : "discord-logo.png",
- 	"fundo" : "discord-fundo.png"
+ 	"icone" : "discord-logo-editado.png",
+ 	"fundo" : "fundo.jpg"
  },
-  {
+ {
  	"nome" : "Steam",
  	"caminho" : "C::",
  	"icone" : "steam-logo.png",
- 	"fundo" : "steam-fundo.png"
+ 	"fundo" : "fundo.jpg"
  },
-  {
- 	"nome" : "Epic Games",
+ {
+ 	"nome" : "SA-MP",
  	"caminho" : "C::",
- 	"icone" : "epic-logo.png",
- 	"fundo" : "epic-fundo.png"
+ 	"icone" : "samp-logo.png",
+ 	"fundo" : "fundo.jpg"
+ },
+ {
+ 	"nome" : "MTA",
+ 	"caminho" : "C::",
+ 	"icone" : "mta-logo.png",
+ 	"fundo" : "fundo.jpg"
+ },
+ {
+ 	"nome" : "Stumbler Guys",
+ 	"caminho" : "C::",
+ 	"icone" : "stumbler-logo.png",
+ 	"fundo" : "fundo.jpg"
+ },
+ {
+ 	"nome" : "SA-MP",
+ 	"caminho" : "C::",
+ 	"icone" : "samp-logo.png",
+ 	"fundo" : "fundo.jpg"
+ },
+ {
+ 	"nome" : "MTA",
+ 	"caminho" : "C::",
+ 	"icone" : "mta-logo.png",
+ 	"fundo" : "fundo.jpg"
+ },
+ {
+ 	"nome" : "Stumbler Guys",
+ 	"caminho" : "C::",
+ 	"icone" : "stumbler-logo.png",
+ 	"fundo" : "fundo.jpg"
+ },
+ {
+ 	"nome" : "SA-MP",
+ 	"caminho" : "C::",
+ 	"icone" : "samp-logo.png",
+ 	"fundo" : "fundo.jpg"
+ },
+ {
+ 	"nome" : "MTA",
+ 	"caminho" : "C::",
+ 	"icone" : "mta-logo.png",
+ 	"fundo" : "fundo.jpg"
+ },
+ {
+ 	"nome" : "Stumbler Guys",
+ 	"caminho" : "C::",
+ 	"icone" : "stumbler-logo.png",
+ 	"fundo" : "fundo.jpg"
+ },
+ {
+ 	"nome" : "SA-MP",
+ 	"caminho" : "C::",
+ 	"icone" : "samp-logo.png",
+ 	"fundo" : "fundo.jpg"
+ },
+ {
+ 	"nome" : "MTA",
+ 	"caminho" : "C::",
+ 	"icone" : "mta-logo.png",
+ 	"fundo" : "fundo.jpg"
+ },
+ {
+ 	"nome" : "Stumbler Guys",
+ 	"caminho" : "C::",
+ 	"icone" : "stumbler-logo.png",
+ 	"fundo" : "fundo.jpg"
  }
-
+ 
 ]
