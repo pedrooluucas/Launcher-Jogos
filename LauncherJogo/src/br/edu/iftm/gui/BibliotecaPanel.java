@@ -16,6 +16,7 @@ import java.io.*;
 public class BibliotecaPanel extends TelaPanel {
 	private ArrayList<Jogo> jogos;
 	private JPanel grid;
+	private Imagem imagemFundo;
 	
 	public BibliotecaPanel(JPanel telas, JFrame janela) {
 		super(telas, janela);
@@ -69,10 +70,28 @@ public class BibliotecaPanel extends TelaPanel {
 			posicaoY += 30 + 256;
 		}
 		
+		imagem.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				String caminho = jogo.getCaminho();
+				executarJogo(caminho);
+			}
+		});
+		
 		grid.add(imagem);
 		} 
 	} 
 
+	private void executarJogo(String caminho) {
+		File arquivo = new File(caminho);
+		String pasta = arquivo.getAbsoluteFile().getParent();
+		//System.out.println(pasta);
+		try {
+			Runtime.getRuntime().exec(caminho, null, new File(pasta));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	private String lerJsonJogos()  {
 		File arquivoJson = new File("jogos.json");

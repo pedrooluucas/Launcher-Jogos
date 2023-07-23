@@ -2,31 +2,31 @@
 
  {
  	"nome" : "SA-MP",
- 	"caminho" : "C::",
+ 	"caminho" : "C:\\Users\\pedro\\Downloads\\Rockstar Games\\Rockstar Games\\Grand Theft Auto San Andreas\\samp.exe",
  	"icone" : "samp-logo.png",
  	"fundo" : "fundo.jpg"
  },
  {
  	"nome" : "MTA",
- 	"caminho" : "C::",
+ 	"caminho" : "C:\\Program Files (x86)\\MTA San Andreas 1.5\\Multi Theft Auto.exe",
  	"icone" : "mta-logo.png",
  	"fundo" : "fundo.jpg"
  },
  {
  	"nome" : "Stumbler Guys",
- 	"caminho" : "C::",
+ 	"caminho" : "steam://rungameid/1677740",
  	"icone" : "stumbler-logo.png",
  	"fundo" : "fundo.jpg"
  },
  {
  	"nome" : "Discord",
- 	"caminho" : "C::",
+ 	"caminho" : "C:\\Users\\pedro\\AppData\\Local\\Discord\\Update.exe --processStart Discord.exe",
  	"icone" : "discord-logo-editado.png",
  	"fundo" : "fundo.jpg"
  },
  {
  	"nome" : "Steam",
- 	"caminho" : "C::",
+ 	"caminho" : "C:\\Program Files (x86)\\Steam\\steam.exe",
  	"icone" : "steam-logo.png",
  	"fundo" : "fundo.jpg"
  }
