@@ -4,6 +4,9 @@ import javax.swing.*;
 import org.json.*;
 import br.edu.iftm.gui.componentes.*;
 import br.edu.iftm.modelos.Jogo;
+
+import java.awt.*;
+import java.awt.FlowLayout;
 import java.awt.event.*;
 import java.util.*;
 import java.io.*;
@@ -12,14 +15,25 @@ import java.io.*;
 
 public class BibliotecaPanel extends TelaPanel {
 	private ArrayList<Jogo> jogos;
+	private JPanel grid;
 	
 	public BibliotecaPanel(JPanel telas, JFrame janela) {
 		super(telas, janela);
 		this.jogos = new ArrayList<Jogo>();
 		
-    
+		
+		grid = new JPanel(new FlowLayout(FlowLayout.LEFT, 22, 22));
+		grid.setBackground(Color.decode("#202028"));
+		
+		
 		carregarJogos();
 		exibirJogos();
+		
+		
+		JScrollPane scrollPanel = new JScrollPane(grid);
+		scrollPanel.setBounds(50, 50, 1456, 1005);
+		
+		this.add(scrollPanel);
 	}
 	
 	
@@ -41,6 +55,9 @@ public class BibliotecaPanel extends TelaPanel {
 		int posicaoY = 50;
 		final int POSICAO_MAX_X = 1250;
 		
+		int altura = (jogos.size() / 6) * 322 + 20;
+		grid.setPreferredSize(new Dimension(500, altura));
+		
 		 for (Jogo jogo : jogos) {
 		String icone = jogo.getIcone();
 		Imagem imagem = new Imagem(icone);
@@ -52,7 +69,7 @@ public class BibliotecaPanel extends TelaPanel {
 			posicaoY += 30 + 256;
 		}
 		
-		this.add(imagem);
+		grid.add(imagem);
 		} 
 	} 
 
