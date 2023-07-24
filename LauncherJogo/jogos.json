@@ -4,6 +4,30 @@
  	"nome" : "SA-MP",
  	"caminho" : "C:\\Users\\pedro\\Downloads\\Rockstar Games\\Rockstar Games\\Grand Theft Auto San Andreas\\samp.exe",
  	"icone" : "samp-logo.png",
+ 	"fundo" : "samp-fundo.jpg"
+ },
+ {
+ 	"nome" : "MTA",
+ 	"caminho" : "C:\\Program Files (x86)\\MTA San Andreas 1.5\\Multi Theft Auto.exe",
+ 	"icone" : "mta-logo.png",
+ 	"fundo" : "mta-fundo.jpg"
+ },
+ {
+ 	"nome" : "Stumbler Guys",
+ 	"caminho" : "steam://rungameid/1677740",
+ 	"icone" : "stumbler-logo.png",
+ 	"fundo" : "stumbler-fundo.jpeg"
+ },
+ {
+ 	"nome" : "Discord",
+ 	"caminho" : "C:\\Users\\pedro\\AppData\\Local\\Discord\\Update.exe --processStart Discord.exe",
+ 	"icone" : "discord-logo-editado.png",
+ 	"fundo" : "discord-fundo.jpeg"
+ },
+ {
+ 	"nome" : "SA-MP",
+ 	"caminho" : "C:\\Users\\pedro\\Downloads\\Rockstar Games\\Rockstar Games\\Grand Theft Auto San Andreas\\samp.exe",
+ 	"icone" : "samp-logo.png",
  	"fundo" : "fundo.jpg"
  },
  {
@@ -25,9 +49,27 @@
  	"fundo" : "fundo.jpg"
  },
  {
- 	"nome" : "Steam",
- 	"caminho" : "C:\\Program Files (x86)\\Steam\\steam.exe",
- 	"icone" : "steam-logo.png",
+ 	"nome" : "SA-MP",
+ 	"caminho" : "C:\\Users\\pedro\\Downloads\\Rockstar Games\\Rockstar Games\\Grand Theft Auto San Andreas\\samp.exe",
+ 	"icone" : "samp-logo.png",
+ 	"fundo" : "fundo.jpg"
+ },
+ {
+ 	"nome" : "MTA",
+ 	"caminho" : "C:\\Program Files (x86)\\MTA San Andreas 1.5\\Multi Theft Auto.exe",
+ 	"icone" : "mta-logo.png",
+ 	"fundo" : "fundo.jpg"
+ },
+ {
+ 	"nome" : "Stumbler Guys",
+ 	"caminho" : "steam://rungameid/1677740",
+ 	"icone" : "stumbler-logo.png",
+ 	"fundo" : "fundo.jpg"
+ },
+ {
+ 	"nome" : "Discord",
+ 	"caminho" : "C:\\Users\\pedro\\AppData\\Local\\Discord\\Update.exe --processStart Discord.exe",
+ 	"icone" : "discord-logo-editado.png",
  	"fundo" : "fundo.jpg"
  }
  

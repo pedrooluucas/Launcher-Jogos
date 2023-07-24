@@ -32,22 +32,15 @@ public class BibliotecaPanel extends TelaPanel {
 		
 		
 		JScrollPane scrollPanel = new JScrollPane(grid);
-		scrollPanel.setBounds(50, 50, 1456, 1005);
+		scrollPanel.setBounds(50, 200, 1456, 300);
+		
+		trocarImagemFundo("discord-fundo.jpeg");
 		
 		this.add(scrollPanel);
+		this.add(imagemFundo);
 	}
 	
 	
-	private void carregarJogos() {
-		String jsonString = lerJsonJogos();
-		JSONArray jsonArray = new JSONArray(jsonString);
-		for (int i = 0; i < jsonArray.length(); i++) {
-			JSONObject jogoJObject = (JSONObject) jsonArray.get(i);
-			
-			jogos.add(new Jogo(jogoJObject));
-		}
-		
-	}
 	
 	
 	private void exibirJogos() {
@@ -56,8 +49,8 @@ public class BibliotecaPanel extends TelaPanel {
 		int posicaoY = 50;
 		final int POSICAO_MAX_X = 1250;
 		
-		int altura = (jogos.size() / 6) * 322 + 20;
-		grid.setPreferredSize(new Dimension(500, altura));
+		//int altura = (jogos.size() / 6) * 322 + 20;
+		//grid.setPreferredSize(new Dimension(500, altura));
 		
 		 for (Jogo jogo : jogos) {
 		String icone = jogo.getIcone();
@@ -73,14 +66,42 @@ public class BibliotecaPanel extends TelaPanel {
 		imagem.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				String caminho = jogo.getCaminho();
-				executarJogo(caminho);
+				String fundo = jogo.getFundo();
+				trocarImagemFundo(fundo);
+				//executarJogo(caminho);
 			}
 		});
 		
 		grid.add(imagem);
 		} 
 	} 
+	
 
+	private void trocarImagemFundo(String imagem) {
+		if(imagemFundo != null) {
+			remove(imagemFundo);
+		}
+		imagemFundo = new Imagem(imagem);
+		imagemFundo.setBounds(0, 0, 1920, 1080);
+		add(imagemFundo);
+		repaint();
+		revalidate();
+	}
+	
+	
+	
+	private void carregarJogos() {
+		String jsonString = lerJsonJogos();
+		JSONArray jsonArray = new JSONArray(jsonString);
+		for (int i = 0; i < jsonArray.length(); i++) {
+			JSONObject jogoJObject = (JSONObject) jsonArray.get(i);
+			
+			jogos.add(new Jogo(jogoJObject));
+		}
+		
+	}
+	
+	
 	private void executarJogo(String caminho) {
 		File arquivo = new File(caminho);
 		String pasta = arquivo.getAbsoluteFile().getParent();
