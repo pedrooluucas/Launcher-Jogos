@@ -17,6 +17,8 @@ public class BibliotecaPanel extends TelaPanel {
 	private ArrayList<Jogo> jogos;
 	private JPanel grid;
 	private Imagem imagemFundo;
+	private Jogo jogoSelecionado;
+	private JLabel labelJogo;
 	
 	public BibliotecaPanel(JPanel telas, JFrame janela) {
 		super(telas, janela);
@@ -32,11 +34,23 @@ public class BibliotecaPanel extends TelaPanel {
 		
 		
 		JScrollPane scrollPanel = new JScrollPane(grid);
-		scrollPanel.setBounds(50, 200, 1456, 300);
+		scrollPanel.setBounds(50, 300, 1456, 300);
 		
-		trocarImagemFundo("discord-fundo.jpeg");
+		labelJogo = new JLabel("San Andreas MultiPlayer");
+		labelJogo.setBounds(50, 50, 1000, 60);
+		
+		labelJogo.setFont(new Font("Roboto", Font.BOLD, 60));
+		
+		Botao botaoJogar = new Botao("JOGAR");
+		botaoJogar.setBounds(1300, 200, 140, 60);
+		botaoJogar.setFont(new Font("Roboto", Font.PLAIN, 30));
+		botaoJogar.setForeground(Color.WHITE);
+		
+		trocarImagemFundo("samp-fundo.jpg");
 		
 		this.add(scrollPanel);
+		this.add(labelJogo);
+		this.add(botaoJogar);
 		this.add(imagemFundo);
 	}
 	
@@ -48,9 +62,6 @@ public class BibliotecaPanel extends TelaPanel {
 		int posicaoX = 50;
 		int posicaoY = 50;
 		final int POSICAO_MAX_X = 1250;
-		
-		//int altura = (jogos.size() / 6) * 322 + 20;
-		//grid.setPreferredSize(new Dimension(500, altura));
 		
 		 for (Jogo jogo : jogos) {
 		String icone = jogo.getIcone();
@@ -65,6 +76,7 @@ public class BibliotecaPanel extends TelaPanel {
 		
 		imagem.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
+				jogoSelecionado = jogo; 	
 				String caminho = jogo.getCaminho();
 				String fundo = jogo.getFundo();
 				trocarImagemFundo(fundo);
