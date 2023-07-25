@@ -19,6 +19,7 @@ public class BibliotecaPanel extends TelaPanel {
 	private Imagem imagemFundo;
 	private Jogo jogoSelecionado;
 	private JLabel labelJogo;
+	private Botao botaoJogar;
 	
 	public BibliotecaPanel(JPanel telas, JFrame janela) {
 		super(telas, janela);
@@ -36,17 +37,28 @@ public class BibliotecaPanel extends TelaPanel {
 		JScrollPane scrollPanel = new JScrollPane(grid);
 		scrollPanel.setBounds(50, 300, 1456, 300);
 		
-		labelJogo = new JLabel("San Andreas MultiPlayer");
+		labelJogo = new JLabel("Meu Launcher");
+		labelJogo.setBackground(Color.DARK_GRAY);
 		labelJogo.setBounds(50, 50, 1000, 60);
+		labelJogo.setVisible(false);
 		
 		labelJogo.setFont(new Font("Roboto", Font.BOLD, 60));
 		
-		Botao botaoJogar = new Botao("JOGAR");
+		botaoJogar = new Botao("JOGAR");
 		botaoJogar.setBounds(1300, 200, 140, 60);
 		botaoJogar.setFont(new Font("Roboto", Font.PLAIN, 30));
 		botaoJogar.setForeground(Color.WHITE);
+		botaoJogar.setVisible(false);
+		botaoJogar.addActionListener(e -> {
+			try {
+				executarJogo();
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		});
 		
-		trocarImagemFundo("samp-fundo.jpg");
+		trocarImagemFundo("launcher-fundo.jpg");
 		
 		this.add(scrollPanel);
 		this.add(labelJogo);
@@ -76,11 +88,7 @@ public class BibliotecaPanel extends TelaPanel {
 		
 		imagem.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				jogoSelecionado = jogo; 	
-				String caminho = jogo.getCaminho();
-				String fundo = jogo.getFundo();
-				trocarImagemFundo(fundo);
-				//executarJogo(caminho);
+				selecionarJogo(jogo);
 			}
 		});
 		
@@ -88,6 +96,20 @@ public class BibliotecaPanel extends TelaPanel {
 		} 
 	} 
 	
+	private void selecionarJogo(Jogo jogo) {
+		jogoSelecionado = jogo;
+		
+		botaoJogar.setVisible(true);
+		labelJogo.setText(jogo.getNome());
+		labelJogo.setVisible(true);
+		
+		String caminho = jogo.getCaminho();
+		String fundo = jogo.getFundo();
+		trocarImagemFundo(fundo);
+		
+		repaint();
+		revalidate();
+	}
 
 	private void trocarImagemFundo(String imagem) {
 		if(imagemFundo != null) {
@@ -96,8 +118,6 @@ public class BibliotecaPanel extends TelaPanel {
 		imagemFundo = new Imagem(imagem);
 		imagemFundo.setBounds(0, 0, 1920, 1080);
 		add(imagemFundo);
-		repaint();
-		revalidate();
 	}
 	
 	
@@ -114,7 +134,12 @@ public class BibliotecaPanel extends TelaPanel {
 	}
 	
 	
-	private void executarJogo(String caminho) {
+	private void executarJogo() throws Exception {
+		if (jogoSelecionado == null) {
+			throw new Exception("Não tem nemhum jogo selecionado para executar");
+		}
+		String caminho = jogoSelecionado.getCaminho();
+		
 		File arquivo = new File(caminho);
 		String pasta = arquivo.getAbsoluteFile().getParent();
 		//System.out.println(pasta);
